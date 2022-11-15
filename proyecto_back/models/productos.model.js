@@ -8,6 +8,6 @@ const ProductosSchema = new Schema({
     marca:{type: String, required: true,max:40},
     cantidad:{type: Number, required: true,max:45},
     precio:{type: Number, required: true,max:1000000},
-    });
+        });
 
 module.exports = mongoose.model("productos", ProductosSchema);
