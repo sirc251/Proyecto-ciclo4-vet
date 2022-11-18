@@ -1,37 +1,61 @@
-import React from 'react'
-import { Container, Form, Button } from 'react-bootstrap';
-
+import React, { startTransition } from "react";
+import { Container, Form, Row, Col } from "react-bootstrap";
+import "./login.css";
+import { Form, Container, Button, Row, Col } from "react-bootstrap/lib/Navbar";
 
 export default class login extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { }
-    }
-    render() { 
-        return (  
-          <Container id="login-container">
-             <Form>
-        <Form.Group >
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+  constructor(props) {
+    super(props);
+    this.state = { usuario: "", pass: "" };
+  }
+  iniciarSesion() {
+    alert("usuario: ${this.state.usuario} - password:${this.state.pass}");
+  }
 
-        <Form.Group >
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group >
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-          </Container>
-          );
-    }
+  render() {
+    return (
+      <Container id="login-container">
+        <Row>
+          <Col>
+            <Row>
+              <h2>Iniciar sesión</h2>
+            </Row>
+            <Col
+              sm="12"
+              xs="12"
+              md={{ span: 4, offset: 4 }}
+              lg={{ span: 4, offset: 4 }}
+              xl={{ span: 4, offset: 4 }}
+            >
+              <Form className="form-label">
+                <Form.Group>
+                  <Form.Label>Usuario</Form.Label>
+                  <Form.Control
+                    onChange={(e) => this.setState({ usuario: e.target.value })}
+                  />
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Contraseña</Form.Label>
+                  <Form.Control
+                    type="password"
+                    onChange={(e) => this.setState({ pass: e.target.value })}
+                  />
+                </Form.Group>
+
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    this.iniciarSesion();
+                  }}
+                >
+                  Iniciar sesión
+                </Button>
+              </Form>
+            </Col>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
- 
