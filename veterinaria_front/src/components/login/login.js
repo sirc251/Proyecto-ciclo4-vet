@@ -14,7 +14,7 @@ export default class login extends React.Component {
 
   render() {
     return (
-      <Container id="login-container">
+      <Container id="login-container" style={{ marginTop: 200 }}>
         <Row>
           <Col>
             <Row>
@@ -29,8 +29,10 @@ export default class login extends React.Component {
             >
               <Form className="form-label">
                 <Form.Group>
-                  <Form.Label>Usuario</Form.Label>
+                  <Form.Label style={{ float: "left " }}>Usuario</Form.Label>
                   <Form.Control
+                    type="email"
+                    placeholder="Enter email"
                     onChange={(e) => this.setState({ usuario: e.target.value })}
                   />
                 </Form.Group>
