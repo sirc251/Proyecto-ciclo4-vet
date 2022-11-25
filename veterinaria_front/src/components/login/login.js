@@ -30,26 +30,17 @@ export default class login extends React.Component {
               <Form className="form-label">
                 <Form.Group>
                   <Form.Label style={{ float: "left " }}>Usuario</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    onChange={(e) => this.setState({ usuario: e.target.value })}
-                  />
+                  <Form.Control />
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label>Contraseña</Form.Label>
-                  <Form.Control
-                    type="password"
-                    onChange={(e) => this.setState({ pass: e.target.value })}
-                  />
+                  <Form.Label style={{ float: "left" }}>Contraseña</Form.Label>
+                  <Form.Control type="password" />
                 </Form.Group>
 
                 <Button
                   variant="primary"
-                  onClick={() => {
-                    this.iniciarSesion();
-                  }}
+                  style={{ marginTop: 20, width: "100%" }}
                 >
                   Iniciar sesión
                 </Button>
