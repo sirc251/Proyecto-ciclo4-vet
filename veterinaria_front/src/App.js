@@ -1,15 +1,17 @@
 // import logo from "./logo.svg";
-import { Container } from "react-bootstrap";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import login from "./components/login/login";
-
+import Menu from "./components/navbar/navbar";
+//import Login from "./components/login/login";
+import { Container } from "react-bootstrap";
+import AppRouter from "./components/router/router";
 
 function App() {
   return (
     <div className="App">
+      <Menu />
       <Container>
-     
+        <AppRouter />
       </Container>
     </div>
   );
